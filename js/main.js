@@ -4,11 +4,11 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
 
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-
-  checkInputs()
+  checkInputs();
 });
 
 const checkInputs = () => {
@@ -23,13 +23,11 @@ const checkInputs = () => {
     setSuccess(username);
   }
 
-
   if (emailValue === "") {
     setError(email, "ایمیل را وارد کنید");
   } else {
     setSuccess(email);
   }
-
 
   if (passwordValue === "") {
     setError(password, "رمز عبور را وارد کنید");
@@ -39,11 +37,9 @@ const checkInputs = () => {
 
   if (password2Value === "") {
     setError(password2, "تکرار رمز عبور را وارد کنید");
-  }
-  else if(passwordValue!==password2Value){
-    setError(password2 ,' رمز عبور اشتباه وارد شده است')
-  }
-   else {
+  } else if (passwordValue !== password2Value) {
+    setError(password2, " رمز عبور اشتباه وارد شده است");
+  } else {
     setSuccess(password2);
   }
 };
